@@ -1,0 +1,89 @@
+<h3 style="text-align: left; padding-left: 90px;">&nbsp;</h3>
+<h3 style="text-align: left; padding-left: 90px;">Customer Prediction Form</h3>
+<table style="height: 74px;" width="449">
+<tbody>
+<tr>
+<td style="width: 439px;">Fill in the following information regarding a potential customer to see a binary prediction of whether they will open an account with the bank. The data used is sourced from Portuguese bank dataset, and the model is ~87% accurate.</td>
+</tr>
+</tbody>
+</table>
+<div><form style="padding-left: 30px;" action="/result" method="POST">
+<p><label for="age">Age</label> <input id="age" name="age" type="text" />&nbsp;(between 1-99)</p>
+<p><label for="job">Job Title&nbsp;</label><select id="job" name="job">
+<option value="0">admin</option>
+<option value="1">Blue-collar</option>
+<option value="2">Entrepreneur</option>
+<option value="3">Housemaid</option>
+<option value="4">Management</option>
+<option value="5">Retired</option>
+<option value="6">Self-Employed</option>
+<option value="7">Services</option>
+<option value="8">Student</option>
+<option value="9">Technician</option>
+<option value="10">Unemployed</option>
+</select></p>
+<p><label for="marital">Marital Status&nbsp;</label><select id="marital" style="padding-left: 30px;" name="marital">
+<option style="padding-left: 30px;" value="0">Divorced</option>
+<option style="padding-left: 30px;" value="1">Married</option>
+<option style="padding-left: 30px;" value="2">Single</option>
+</select></p>
+<label for="education">Education</label><select id="education" style="padding-left: 30px;" name="education">
+<option style="padding-left: 30px;" value="0">Basic 4 years</option>
+<option style="padding-left: 30px;" value="1">Basic 6 years</option>
+<option style="padding-left: 30px;" value="2">Basic 9 years</option>
+<option style="padding-left: 30px;" value="3">High School</option>
+<option style="padding-left: 30px;" value="4">Illiterate</option>
+<option style="padding-left: 30px;" value="5">Professional Course</option>
+<option style="padding-left: 30px;" value="6">University Degree</option>
+</select>
+<p><label for="default">Has Credit in Default&nbsp;</label><select id="default" name="default">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select></p>
+<p><label for="housing">Has Housing Loan?&nbsp;</label><select id="housing" name="housing">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select></p>
+<p><label for="loan">Has Personal loan?&nbsp;</label><select id="loan" name="loan">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select></p>
+<p><label for="contact">Contact Communication Type&nbsp;</label><select id="contact" name="contact">
+<option value="0">Cellular</option>
+<option value="1">Telephone</option>
+</select></p>
+<p><label for="month">Month : Last Contact Month&nbsp;</label><select id="month" name="month">
+<option value="0">April</option>
+<option value="1">Aug</option>
+<option value="2">December</option>
+<option value="3">July</option>
+<option value="4">June</option>
+<option value="5">March</option>
+<option value="6">May</option>
+<option value="7">November</option>
+<option value="8">October</option>
+<option value="9">September</option>
+</select></p>
+<p><label for="day_of_week">Day of week contacted&nbsp;</label><select id="month" name="month">
+<option value="0">Friday</option>
+<option value="1">Monday</option>
+<option value="2">Thursday</option>
+<option value="3">Tuesday</option>
+<option value="4">Wednesday</option>
+</select></p>
+<p><label for="age">Times Contacted (current campaign) </label> <input id="campaign" name="campaign" type="text" /></p>
+<p><label for="age">Days Since Last Contact</label> <input id="pdays" name="pdays" type="text" />&nbsp;(-1 for no contact)</p>
+<p><label for="age">Times Contacted (previous campaigns)</label> <input id="campaign" name="campaign" type="text" />&nbsp;(-1 for no contact)</p>
+<p><label for="day_of_week">Outcome of Last Campaign&nbsp;</label><select id="poutcome" name="poutcome">
+<option value="0">Failure</option>
+<option value="1">Non-existent</option>
+<option value="2">Success</option>
+</select></p>
+<p><label for="age">Employment Variation Rate</label> <input id="emp.var.rate" name="emp.var.rate" type="text" /></p>
+<p><label for="age">Consumer Price Index</label> <input id="cons.price.idx" name="cons.price.idx" type="text" /></p>
+<p><label for="age">Consumer Confidence Index</label> <input id="cons.conf.idx" name="cons.conf.idx" type="text" /></p>
+<p><label for="age">Euribor 3-month Rate</label> <input id="euribor3m" name="euribor3m" type="text" /></p>
+<p><label for="age">Number of Employees</label> <input id="nr.empoyed" name="nr.employed" type="text" /></p>
+<p>&nbsp;</p>
+<p style="text-align: left; padding-left: 150px;"><input type="submit" value="Submit" /></p>
+</form></div>
