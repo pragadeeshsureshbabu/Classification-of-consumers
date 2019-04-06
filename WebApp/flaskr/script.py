@@ -31,4 +31,4 @@ def result():
             prediction='He subscribes'
         else:
             prediction='He doesnt subscribe.'
-        return render_template("result.html",prediction=result)
+        return render_template("result.html",prediction=prediction)
