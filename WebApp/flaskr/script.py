@@ -15,20 +15,24 @@ def index():
 def ValuePredictor(to_predict_list):
     to_predict = np.array(to_predict_list).reshape(1,19)
     loaded_model = pickle.load(open("rfc_model.pkl","rb"))
-    result = loaded_model.predict(to_predict)
+    result = loaded_model.predict_proba(to_predict)[:, 1]
     return result[0]
-
+def ValuePredictor_log(to_predict_list):
+    to_predict = np.array(to_predict_list).reshape(1,19)
+    loaded_model = pickle.load(open("log_model.pkl","rb"))
+    result = loaded_model.predict_proba(to_predict)[:, 1]
+    return result[0]
 @app.route('/result',methods = ['POST'])
 def result():
     if request.method == 'POST':
-        print('0',request.form)
         to_predict_list = request.form.to_dict()
-        print('1',to_predict_list)
         to_predict_list=list(to_predict_list.values())
-        to_predict_list = list(map(int, to_predict_list))
-        result = ValuePredictor(to_predict_list)
-        if int(result)>0.5:
-            prediction='He subscribes'
+        to_predict_list = list(map(float, to_predict_list))
+        result1 = ValuePredictor(to_predict_list)
+        result2 = ValuePredictor_log(to_predict_list)
+        result=(result1+result2)/2.0
+        if float(result)>0.53:
+            prediction='Yes, This customer will Subscribe.'
         else:
-            prediction='He doesnt subscribe.'
+            prediction='No, This customer will not Subscribe.'
         return render_template("result.html",prediction=prediction)
