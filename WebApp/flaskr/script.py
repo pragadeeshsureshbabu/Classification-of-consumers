@@ -31,8 +31,12 @@ def result():
         result1 = ValuePredictor(to_predict_list)
         result2 = ValuePredictor_log(to_predict_list)
         result=(result1+result2)/2.0
+        f=result*100
+        f=round(f,4)
         if float(result)>0.53:
-            prediction='Yes, This customer will Subscribe.'
+            prediction='Yes, This customer will Subscribe with a probability of '+ str(f)+'%'
         else:
-            prediction='No, This customer will not Subscribe.'
+            ft=100-f
+            ft=round(ft,4)
+            prediction='No, This customer will Not Subscribe with a probability of '+ str(ft)+'%'
         return render_template("result.html",prediction=prediction)
