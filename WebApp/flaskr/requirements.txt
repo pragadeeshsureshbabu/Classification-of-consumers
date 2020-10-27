@@ -33,7 +33,7 @@ colormath==3.0.0
 comtypes==1.1.2
 conda==4.5.2
 contextlib2==0.5.5
-cryptography==2.0.3
+cryptography==3.2
 cycler==0.10.0
 cymem==2.0.2
 Cython==0.26.1
